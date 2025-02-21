@@ -1,4 +1,4 @@
-Challenge B - Stranger Things Theme
+# Challenge B - Stranger Things Theme
 
 use_bpm 160
 use_synth :saw
