@@ -1,4 +1,4 @@
-Terraria Underground Remix!!!!!
+#Terraria Underground Remix!!!!!
 
 use_bpm 140
 use_synth :piano
