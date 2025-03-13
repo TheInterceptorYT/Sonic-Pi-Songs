@@ -3,9 +3,26 @@
 use_bpm 140
 use_synth :piano
 
-intro = "C:/Users/TheInterceptorYT/Downloads/WAWAW.wav"
+intro = "C:/Users/David_Diaz/Downloads/WAWAW.wav"
 
-ending = "C:/Users/TheInterceptorYT/Downloads/terraria-item.mp3"
+ending = "C:/Users/David_Diaz/Downloads/terraria-item.mp3"
+
+notes = [:g4,:f4,:g3,:g2,:f2,:e2,:c2,:d2,:g4,:f4,:g3,:g2,:f2,:e2,:c2,:d2]
+sleep = [1,1,1,0.5,0.5,0.5,0.5,1,1,1,1,0.5,0.5,0.5,0.5,0.5]
+i = 0
+
+sleep 2
+16.times do
+  play(notes[i])
+  sleep(sleep[i])
+  i = i + 1
+end
+
+define :beatdos do |note1, note2|
+  play note1, amp: 0.3
+  sleep 1
+  play note2, amp: 0.3
+end
 
 define :measure1n3 do
   play :g1, sustain: 6
@@ -227,9 +244,19 @@ end
 
 live_loop :beat do
   sleep 50
-  31.times do
+  15.times do
     sleep 1
     sample :drum_bass_soft, amp: 0.5
+    beatdos :a5,:a4
+  end
+  stop
+end
+
+live_loop :beat4 do
+  sleep 50
+  20.times do
+    sleep 0.5
+    beatdos :a5,:a4
   end
   stop
 end
